@@ -1,10 +1,9 @@
-/* --------Author Niranjan Imalka -----------
+/* --------Author Niranjan Imalka - CORRECTED VERSION -----------*/
+@use "sass:math";
 /* ROW */
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
 }
 
 /* COL */
@@ -27,41 +26,41 @@
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    flex: 0 0 #{(100% / 12) * $i};
-    max-width: #{(100% / 12) * $i};
+    flex: 0 0 #{math.div(100%, 12) * $i};
+    max-width: #{math.div(100%, 12) * $i};
   }
 }
 
-/* Responsive breakpoints */
+/* Responsive breakpoints - ALL USING MIN-WIDTH */
 @media (min-width: 576px) {
   @for $i from 1 through 12 {
     .col-sm-#{$i} {
-      flex: 0 0 #{(100% / 12) * $i};
-      max-width: #{(100% / 12) * $i};
+      flex: 0 0 #{math.div(100%, 12) * $i};
+      max-width: #{math.div(100%, 12) * $i};
     }
   }
 }
 @media (min-width: 768px) {
   @for $i from 1 through 12 {
     .col-md-#{$i} {
-      flex: 0 0 #{(100% / 12) * $i};
-      max-width: #{(100% / 12) * $i};
+      flex: 0 0 #{math.div(100%, 12) * $i};
+      max-width: #{math.div(100%, 12) * $i};
     }
   }
 }
 @media (min-width: 992px) {
   @for $i from 1 through 12 {
     .col-lg-#{$i} {
-      flex: 0 0 #{(100% / 12) * $i};
-      max-width: #{(100% / 12) * $i};
+      flex: 0 0 #{math.div(100%, 12) * $i};
+      max-width: #{math.div(100%, 12) * $i};
     }
   }
 }
 @media (min-width: 1200px) {
   @for $i from 1 through 12 {
     .col-xl-#{$i} {
-      flex: 0 0 #{(100% / 12) * $i};
-      max-width: #{(100% / 12) * $i};
+      flex: 0 0 #{math.div(100%, 12) * $i};
+      max-width: #{math.div(100%, 12) * $i};
     }
   }
 }
@@ -77,11 +76,11 @@
 /* Offsets */
 @for $i from 1 through 11 {
   .offset-#{$i} {
-    margin-left: #{(100% / 12) * $i};
+    margin-left: #{math.div(100%, 12) * $i};
   }
   @media (min-width: 768px) {
     .offset-md-#{$i} {
-      margin-left: #{(100% / 12) * $i};
+      margin-left: #{math.div(100%, 12) * $i};
     }
   }
 }
@@ -96,7 +95,7 @@
   --space-5: 3rem;
 }
 
-/* Margin Utilities */
+/* Base Margin Utilities (Mobile First) */
 .m-0 { margin: var(--space-0) !important; }
 .m-1 { margin: var(--space-1) !important; }
 .m-2 { margin: var(--space-2) !important; }
@@ -146,7 +145,7 @@
 .my-4 { margin-top: var(--space-4) !important; margin-bottom: var(--space-4) !important; }
 .my-5 { margin-top: var(--space-5) !important; margin-bottom: var(--space-5) !important; }
 
-/* Padding Utilities */
+/* Base Padding Utilities (Mobile First) */
 .p-0 { padding: var(--space-0) !important; }
 .p-1 { padding: var(--space-1) !important; }
 .p-2 { padding: var(--space-2) !important; }
@@ -225,63 +224,119 @@
 .visible { visibility: visible !important; }
 .invisible { visibility: hidden !important; }
 
-/* Base (xs) */
-.justify-start     { justify-content: flex-start !important; }
-.justify-center    { justify-content: center !important; }
-.justify-end       { justify-content: flex-end !important; }
+/* RESPONSIVE UTILITIES - ALL USING MIN-WIDTH FOR MOBILE-FIRST */
 
 /* Small devices (≥576px) */
 @media (min-width: 576px) {
-  .sm-start     { justify-content: flex-start !important; }
-  .sm-center    { justify-content: center !important; }
-  .sm-end       { justify-content: flex-end !important; }
-}
+  .m-0-sm { margin: var(--space-0) !important; }
+  .m-1-sm { margin: var(--space-1) !important; }
+  .m-2-sm { margin: var(--space-2) !important; }
+  .m-3-sm { margin: var(--space-3) !important; }
+  .m-4-sm { margin: var(--space-4) !important; }
+  .m-5-sm { margin: var(--space-5) !important; }
 
-/* Medium devices (≥768px) */
-@media (min-width: 768px) {
-  .md-start     { justify-content: flex-start !important; }
-  .md-center    { justify-content: center !important; }
-  .md-end       { justify-content: flex-end !important; }
-}
+  .mt-0-sm { margin-top: var(--space-0) !important; }
+  .mt-1-sm { margin-top: var(--space-1) !important; }
+  .mt-2-sm { margin-top: var(--space-2) !important; }
+  .mt-3-sm { margin-top: var(--space-3) !important; }
+  .mt-4-sm { margin-top: var(--space-4) !important; }
+  .mt-5-sm { margin-top: var(--space-5) !important; }
+  
+  .px-0-sm { padding-left: var(--space-0) !important; padding-right: var(--space-0) !important; }
+  .px-1-sm { padding-left: var(--space-1) !important; padding-right: var(--space-1) !important; }
+  .px-2-sm { padding-left: var(--space-2) !important; padding-right: var(--space-2) !important; }
+  .px-3-sm { padding-left: var(--space-3) !important; padding-right: var(--space-3) !important; }
+  .px-4-sm { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+  .px-5-sm { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
 
-/* Large devices (≥992px) */
-@media (min-width: 992px) {
-  .lg-start     { justify-content: flex-start !important; }
-  .lg-center    { justify-content: center !important; }
-  .lg-end       { justify-content: flex-end !important; }
-}
-
-/* Extra Large devices (≥1200px) */
-@media (min-width: 1200px) {
-  .xl-start     { justify-content: flex-start !important; }
-  .xl-center    { justify-content: center !important; }
-  .xl-end       { justify-content: flex-end !important; }
-}
-
-/* Small (≥576px) */
-@media (min-width: 576px) {
+  .pb-0-sm { padding-bottom: var(--space-0) !important; }
+  .pb-1-sm { padding-bottom: var(--space-1) !important; }
+  .pb-2-sm { padding-bottom: var(--space-2) !important; }
+  .pb-3-sm { padding-bottom: var(--space-3) !important; }
+  .pb-4-sm { padding-bottom: var(--space-4) !important; }
+  .pb-5-sm { padding-bottom: var(--space-5) !important; }
+  
   .text-sm-start  { text-align: left !important; }
   .text-sm-center { text-align: center !important; }
   .text-sm-end    { text-align: right !important; }
 }
 
-/* Medium (≥768px) */
+/* Medium devices (≥768px) */
 @media (min-width: 768px) {
+  .m-0-md { margin: var(--space-0) !important; }
+  .m-1-md { margin: var(--space-1) !important; }
+  .m-2-md { margin: var(--space-2) !important; }
+  .m-3-md { margin: var(--space-3) !important; }
+  .m-4-md { margin: var(--space-4) !important; }
+  .m-5-md { margin: var(--space-5) !important; }
+  
+  .px-0-md { padding-left: var(--space-0) !important; padding-right: var(--space-0) !important; }
+  .px-1-md { padding-left: var(--space-1) !important; padding-right: var(--space-1) !important; }
+  .px-2-md { padding-left: var(--space-2) !important; padding-right: var(--space-2) !important; }
+  .px-3-md { padding-left: var(--space-3) !important; padding-right: var(--space-3) !important; }
+  .px-4-md { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+  .px-5-md { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
+  
   .text-md-start  { text-align: left !important; }
   .text-md-center { text-align: center !important; }
   .text-md-end    { text-align: right !important; }
 }
 
-/* Large (≥992px) */
+/* Large devices (≥992px) */
 @media (min-width: 992px) {
+  .m-0-lg { margin: var(--space-0) !important; }
+  .m-1-lg { margin: var(--space-1) !important; }
+  .m-2-lg { margin: var(--space-2) !important; }
+  .m-3-lg { margin: var(--space-3) !important; }
+  .m-4-lg { margin: var(--space-4) !important; }
+  .m-5-lg { margin: var(--space-5) !important; }
+  
+  .px-0-lg { padding-left: var(--space-0) !important; padding-right: var(--space-0) !important; }
+  .px-1-lg { padding-left: var(--space-1) !important; padding-right: var(--space-1) !important; }
+  .px-2-lg { padding-left: var(--space-2) !important; padding-right: var(--space-2) !important; }
+  .px-3-lg { padding-left: var(--space-3) !important; padding-right: var(--space-3) !important; }
+  .px-4-lg { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+  .px-5-lg { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
+  
   .text-lg-start  { text-align: left !important; }
   .text-lg-center { text-align: center !important; }
   .text-lg-end    { text-align: right !important; }
 }
 
-/* Extra Large (≥1200px) */
+/* Extra Large devices (≥1200px) */
 @media (min-width: 1200px) {
+  .m-0-xl { margin: var(--space-0) !important; }
+  .m-1-xl { margin: var(--space-1) !important; }
+  .m-2-xl { margin: var(--space-2) !important; }
+  .m-3-xl { margin: var(--space-3) !important; }
+  .m-4-xl { margin: var(--space-4) !important; }
+  .m-5-xl { margin: var(--space-5) !important; }
+  
+  .px-0-xl { padding-left: var(--space-0) !important; padding-right: var(--space-0) !important; }
+  .px-1-xl { padding-left: var(--space-1) !important; padding-right: var(--space-1) !important; }
+  .px-2-xl { padding-left: var(--space-2) !important; padding-right: var(--space-2) !important; }
+  .px-3-xl { padding-left: var(--space-3) !important; padding-right: var(--space-3) !important; }
+  .px-4-xl { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+  .px-5-xl { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
+  
   .text-xl-start  { text-align: left !important; }
   .text-xl-center { text-align: center !important; }
   .text-xl-end    { text-align: right !important; }
+}
+
+/* Extra Extra Large devices (≥1400px) */
+@media (min-width: 1400px) {
+  .m-0-xxl { margin: var(--space-0) !important; }
+  .m-1-xxl { margin: var(--space-1) !important; }
+  .m-2-xxl { margin: var(--space-2) !important; }
+  .m-3-xxl { margin: var(--space-3) !important; }
+  .m-4-xxl { margin: var(--space-4) !important; }
+  .m-5-xxl { margin: var(--space-5) !important; }
+  
+  .px-0-xxl { padding-left: var(--space-0) !important; padding-right: var(--space-0) !important; }
+  .px-1-xxl { padding-left: var(--space-1) !important; padding-right: var(--space-1) !important; }
+  .px-2-xxl { padding-left: var(--space-2) !important; padding-right: var(--space-2) !important; }
+  .px-3-xxl { padding-left: var(--space-3) !important; padding-right: var(--space-3) !important; }
+  .px-4-xxl { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+  .px-5-xxl { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
 }

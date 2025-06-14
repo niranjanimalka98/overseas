@@ -3,7 +3,7 @@
     <footer class="amadeus-footer">
       <div class="footer-container">
         <!-- Main footer content -->
-        <div class="footer-main">
+        <div class="footer-main px-3 px-3-sm px-5-md px-5-lg px-5-xl">
           <div class="footer-left">
             <h2 class="company-name">Amadeus IT Group</h2>
             <div class="company-address">
@@ -18,6 +18,7 @@
               <span class="follow-text">Follow us on</span>
               <div class="social-icons">
                 <a
+                  class="social-link"
                   href="https://twitter.com/amadeus"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -26,6 +27,7 @@
                   <img src="../assets/Icons/Twitter White.svg" class="social-icon" />
                 </a>
                 <a
+                  class="social-link"
                   href="https://youtube.com/amadeus"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -41,9 +43,12 @@
         <div class="footer-bottom">
           <div class="footer-divider"></div>
 
-          <div class="footer-bottom-content">
+          <div class="footer-bottom-content px-3 px-3-sm px-3-md px-5-lg px-5-xl">
             <div class="copyright">
-              <p>Copyright © 2022 Amadeus Hotels. All rights reserved.</p>
+              <div class="copyright-text">
+                <div class="line-1">Copyright © 2022 Amadeus Hotels.</div>
+                <div class="line-2">All rights reserved.</div>
+              </div>
             </div>
 
             <div class="photo-credits">
@@ -96,17 +101,11 @@
     'Helvetica Neue', sans-serif;
 }
 
-.footer-container {
-  
-}
-
 .footer-main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 2rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .footer-left {
@@ -158,14 +157,13 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #ffffff;
   border-radius: 4px;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .social-link:hover {
-  background-color: #f0f0f0;
+  color: #ff0000;
   transform: translateY(-2px);
 }
 
@@ -191,8 +189,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .copyright p {
@@ -217,8 +213,13 @@
   color: #cccccc;
 }
 
+.copyright-text {
+  display: flex;
+  gap: 0.25rem;
+}
+
 /* Tablet styles */
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   .footer-main {
     flex-direction: column;
     align-items: center;
@@ -266,7 +267,6 @@
   }
 
   .social-section {
-    flex-direction: column;
     gap: 0.75rem;
     align-items: center;
   }
@@ -276,7 +276,7 @@
   }
 
   .social-icons {
-    gap: 1rem;
+    gap: 5px;
   }
 
   .footer-divider {
@@ -291,7 +291,7 @@
 }
 
 /* Small mobile styles */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .footer-container {
     padding: 0 0.75rem;
   }
@@ -301,7 +301,7 @@
   }
 
   .company-address p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .social-link {
@@ -310,13 +310,25 @@
   }
 
   .social-icon {
-    width: 18px;
-    height: 18px;
+    width: 30px;
+    height: 20px;
   }
 
   .copyright p,
   .photo-credits p {
     font-size: 0.75rem;
   }
+
+  .copyright-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-bottom-content{
+justify-content: center;
+}
 }
 </style>

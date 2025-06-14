@@ -2,10 +2,13 @@
   <section class="hero">
     <img src="../assets/Images/HeaderImage.jpg" alt="Theater Seats" class="hero-image" />
 
-    <div class="" style="background-color: black; padding: 30px 70px; top: -5px; position: relative;">
-      <div class="col-12 col-md-6 col-lg-5">
-        <h1>MOVIE LIBRARY</h1>
-        <p>
+    <div
+      class="row px-3 px-3-sm px-5-md px-5-lg px-5-xl py-4"
+      style="background-color: black; position: relative; margin-top:-5px;"
+    >
+      <div class="col-12 col-md-9 col-lg-5">
+        <h1 class="hero-title">MOVIE LIBRARY</h1>
+        <p class="mb-3">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
         </p>
@@ -65,6 +68,9 @@ header .container {
   align-items: center;
 }
 
+.hero-title {
+  color: #ffffff;
+}
 .logo {
   display: flex;
   align-items: center;
@@ -175,13 +181,13 @@ nav {
 /* Hero section */
 .hero {
   position: relative;
-  height: 100vh;
-  top: -320px;
 }
 
 .hero-image {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  margin-top: -320px;
+  position: relative;
   object-fit: cover;
   object-position: center;
 }
@@ -318,10 +324,6 @@ footer {
 @media (max-width: 768px) {
   h1 {
     font-size: 32px;
-  }
-
-  .hero {
-    height: 50vh;
   }
 }
 
