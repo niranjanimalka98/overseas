@@ -8,14 +8,12 @@ import RTLToggle from './components/UI/RTLToggle.vue'
 </script>
 
 <template>
-<NavBar/>
-<RTLToggle :showInfo="true" :persistState="true" storageKey="rtl-mode"/>
-<Hero/>
-<FavouriteCollection/>
-<Contact/>
-<Footer/>
+  <NavBar />
+  <Hero />
+  <FavouriteCollection />
+  <Contact />
+  <Footer />
+  <RTLToggle :showInfo="true" :persistState="true" storageKey="rtl-mode" />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
